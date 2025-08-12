@@ -9,7 +9,7 @@ import java.util.ArrayList
 class SliderViewPackage : ReactPackage {
   override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
     val viewManagers: MutableList<ViewManager<*, *>> = ArrayList()
-    viewManagers.add(SliderViewManager())
+    viewManagers.add(NUISliderManager())
     return viewManagers
   }
 

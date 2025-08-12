@@ -5,4 +5,6 @@ interface NativeProps extends ViewProps {
   color?: string;
 }
 
-export default codegenNativeComponent<NativeProps>('SliderView');
+export default codegenNativeComponent<NativeProps>('NUISlider', {
+  interfaceOnly: true,
+});

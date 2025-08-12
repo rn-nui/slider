@@ -56,7 +56,8 @@
   },
   "homepage": "https://github.com/rn-nui/slider#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.6.0",
@@ -149,7 +150,7 @@
     ]
   },
   "codegenConfig": {
-    "name": "SliderViewSpec",
+    "name": "NUISliderSpec",
     "type": "all",
     "jsSrcsDir": "src",
     "android": {
@@ -157,7 +158,7 @@
     },
     "ios": {
       "componentProvider": {
-        "SliderView": "SliderView"
+        "NUISlider": "NUISlider"
       }
     }
   },

@@ -6,17 +6,13 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewManagerDelegate
 import com.facebook.react.uimanager.annotations.ReactProp
-import com.facebook.react.viewmanagers.SliderViewManagerInterface
-import com.facebook.react.viewmanagers.SliderViewManagerDelegate
+import com.facebook.react.viewmanagers.NUISliderManagerInterface
+import com.facebook.react.viewmanagers.NUISliderManagerDelegate
 
-@ReactModule(name = SliderViewManager.NAME)
-class SliderViewManager : SimpleViewManager<SliderView>(),
-  SliderViewManagerInterface<SliderView> {
-  private val mDelegate: ViewManagerDelegate<SliderView>
-
-  init {
-    mDelegate = SliderViewManagerDelegate(this)
-  }
+@ReactModule(name = NUISliderManager.NAME)
+class NUISliderManager : SimpleViewManager<SliderView>(),
+  NUISliderManagerInterface<SliderView> {
+  private val mDelegate: ViewManagerDelegate<SliderView> = NUISliderManagerDelegate(this)
 
   override fun getDelegate(): ViewManagerDelegate<SliderView>? {
     return mDelegate
@@ -36,6 +32,6 @@ class SliderViewManager : SimpleViewManager<SliderView>(),
   }
 
   companion object {
-    const val NAME = "SliderView"
+    const val NAME = "NUISlider"
   }
 }
