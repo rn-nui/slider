@@ -14,7 +14,10 @@ module.exports = {
         // Codegen script incorrectly fails without this
         // So we explicitly specify the platforms with empty object
         ios: {},
-        android: {},
+        android: {
+          componentDescriptors: ['NUISliderComponentDescriptor'],
+          cmakeListsPath: '../../android/src/main/jni/CMakeLists.txt',
+        },
       },
     },
   },
