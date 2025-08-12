@@ -4,7 +4,7 @@ import { SliderView } from '@rn-nui/slider';
 export default function App() {
   return (
     <View style={styles.container}>
-      <SliderView color="#32a852" style={styles.box} />
+      <SliderView color="#00000000" style={styles.box} />
     </View>
   );
 }
@@ -16,8 +16,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    width: '100%',
   },
 });
