@@ -1,2 +1,2 @@
-export { default as SliderView } from './SliderViewNativeComponent';
-export * from './SliderViewNativeComponent';
+export { default as Slider } from './Slider';
+export * from './Slider';

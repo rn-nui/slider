@@ -1,7 +1,7 @@
 #pragma once
 
 #include "NUISliderMeasurementsManager.h"
-
+#include <react/renderer/core/LayoutContext.h>
 #include <react/renderer/components/NUISliderSpec/EventEmitters.h>
 #include <react/renderer/components/NUISliderSpec/Props.h>
 #include <react/renderer/components/view/ConcreteViewShadowNode.h>
