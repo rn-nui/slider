@@ -7,11 +7,9 @@ import android.util.TypedValue
 import android.view.View
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.ReadableMap
-import com.facebook.react.common.MapBuilder
 import com.facebook.react.module.annotations.ReactModule
 import com.facebook.react.uimanager.PixelUtil
 import com.facebook.react.uimanager.PixelUtil.dpToPx
-import com.facebook.react.uimanager.PixelUtil.pxToDp
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.UIManagerHelper
@@ -60,9 +58,10 @@ class NUISliderManager : SimpleViewManager<Slider>(),
         "always-visible" -> LabelFormatter.LABEL_VISIBLE
         "floating" -> LabelFormatter.LABEL_FLOATING
         "never-visible" -> LabelFormatter.LABEL_GONE
-        else -> LabelFormatter.LABEL_VISIBLE
+        else -> LabelFormatter.LABEL_FLOATING
       }
     }
+
     val measureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
     view.measure(measureSpec, measureSpec)
     return YogaMeasureOutput.make(
@@ -408,7 +407,7 @@ class NUISliderManager : SimpleViewManager<Slider>(),
       "always-visible" -> LabelFormatter.LABEL_VISIBLE
       "floating" -> LabelFormatter.LABEL_FLOATING
       "never-visible" -> LabelFormatter.LABEL_GONE
-      else -> LabelFormatter.LABEL_VISIBLE
+      else -> LabelFormatter.LABEL_FLOATING
     }
   }
 
@@ -516,7 +515,6 @@ class NUISliderManager : SimpleViewManager<Slider>(),
 
   private fun getHeightFromProps(props: ReadableMap?): Int {
     if (props == null) return XS.thumbHeight
-
 
     val propHeight = if (props.hasKey("height")) {
       props.getInt("height").coerceAtLeast(0).dpToPx().toInt()
